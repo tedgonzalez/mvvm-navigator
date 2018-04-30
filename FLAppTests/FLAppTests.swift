@@ -13,24 +13,32 @@ class FLAppTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
     }
     
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testAdContainerMapping() {
+        //given
+        let json = jsonData(fromResource: "ADCONTAINER")
+        
+        //when
+        let container = try! JSONDecoder().decode(AdContainer.self, from: json)
+        
+        //then
+        XCTAssert(container.size == 5957)
+        XCTAssert(container.version == "finn_meta_discovery_2b")
+        XCTAssert(container.uuid == "80ec2f0c-44c9-435a-aeec-99e164304de9")
+        XCTAssert(container.items?.count == 1)
+        
+        let item = container.items!.first!
+        XCTAssert(item.image?.url == "2017/9/vertical-5/30/5/105/424/_1263219766.jpg")
+        XCTAssert(item.adType == "BAP")
+        XCTAssert(item.price?.value == 300)
+        XCTAssert(item.adDescription == "Legemidler og bruken av dem")
+        XCTAssert(item.location == "Laksevåg")
     }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-    
 }
+
+
