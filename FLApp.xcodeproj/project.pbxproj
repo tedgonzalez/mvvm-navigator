@@ -14,8 +14,10 @@
 		A0026B1920972D6300B6926D /* URLSessionDataTaskProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0026B1820972D6300B6926D /* URLSessionDataTaskProtocol.swift */; };
 		A0026B1C209732E700B6926D /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0026B1B209732E700B6926D /* MockURLSession.swift */; };
 		A0026B1F2097449E00B6926D /* XCTestCase+json.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0026B1E2097449E00B6926D /* XCTestCase+json.swift */; };
+		A0026B2220974C3200B6926D /* ADCONTAINER_COMPLETE.json in Resources */ = {isa = PBXBuildFile; fileRef = A0026B2120974C3200B6926D /* ADCONTAINER_COMPLETE.json */; };
+		A0026B2320974C3200B6926D /* ADCONTAINER_COMPLETE.json in Resources */ = {isa = PBXBuildFile; fileRef = A0026B2120974C3200B6926D /* ADCONTAINER_COMPLETE.json */; };
 		A060C9F92096F77200DAD27F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A060C9F82096F77200DAD27F /* AppDelegate.swift */; };
-		A060C9FB2096F77200DAD27F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A060C9FA2096F77200DAD27F /* ViewController.swift */; };
+		A060C9FB2096F77200DAD27F /* AdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A060C9FA2096F77200DAD27F /* AdViewController.swift */; };
 		A060C9FE2096F77200DAD27F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A060C9FC2096F77200DAD27F /* Main.storyboard */; };
 		A060CA002096F77300DAD27F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A060C9FF2096F77300DAD27F /* Assets.xcassets */; };
 		A060CA032096F77300DAD27F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A060CA012096F77300DAD27F /* LaunchScreen.storyboard */; };
@@ -51,9 +53,10 @@
 		A0026B1820972D6300B6926D /* URLSessionDataTaskProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionDataTaskProtocol.swift; sourceTree = "<group>"; };
 		A0026B1B209732E700B6926D /* MockURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSession.swift; sourceTree = "<group>"; };
 		A0026B1E2097449E00B6926D /* XCTestCase+json.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+json.swift"; sourceTree = "<group>"; };
+		A0026B2120974C3200B6926D /* ADCONTAINER_COMPLETE.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ADCONTAINER_COMPLETE.json; sourceTree = "<group>"; };
 		A060C9F52096F77200DAD27F /* FLApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FLApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A060C9F82096F77200DAD27F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A060C9FA2096F77200DAD27F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A060C9FA2096F77200DAD27F /* AdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdViewController.swift; sourceTree = "<group>"; };
 		A060C9FD2096F77200DAD27F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A060C9FF2096F77300DAD27F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A060CA022096F77300DAD27F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -104,6 +107,7 @@
 		A0026B0D2097171900B6926D /* SampleData */ = {
 			isa = PBXGroup;
 			children = (
+				A0026B2120974C3200B6926D /* ADCONTAINER_COMPLETE.json */,
 				A0026B0E2097171900B6926D /* ADCONTAINER.json */,
 			);
 			path = SampleData;
@@ -135,6 +139,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		A0026B20209748B200B6926D /* Ad Screen */ = {
+			isa = PBXGroup;
+			children = (
+				A060C9FA2096F77200DAD27F /* AdViewController.swift */,
+			);
+			path = "Ad Screen";
+			sourceTree = "<group>";
+		};
 		A060C9EC2096F77200DAD27F = {
 			isa = PBXGroup;
 			children = (
@@ -158,9 +170,9 @@
 		A060C9F72096F77200DAD27F /* FLApp */ = {
 			isa = PBXGroup;
 			children = (
+				A0026B20209748B200B6926D /* Ad Screen */,
 				A060CA182096FEEB00DAD27F /* Service */,
 				A060C9F82096F77200DAD27F /* AppDelegate.swift */,
-				A060C9FA2096F77200DAD27F /* ViewController.swift */,
 				A060C9FC2096F77200DAD27F /* Main.storyboard */,
 				A060C9FF2096F77300DAD27F /* Assets.xcassets */,
 				A060CA012096F77300DAD27F /* LaunchScreen.storyboard */,
@@ -316,6 +328,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A060CA032096F77300DAD27F /* LaunchScreen.storyboard in Resources */,
+				A0026B2220974C3200B6926D /* ADCONTAINER_COMPLETE.json in Resources */,
 				A060CA002096F77300DAD27F /* Assets.xcassets in Resources */,
 				A060C9FE2096F77200DAD27F /* Main.storyboard in Resources */,
 			);
@@ -326,6 +339,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0026B0F2097171900B6926D /* ADCONTAINER.json in Resources */,
+				A0026B2320974C3200B6926D /* ADCONTAINER_COMPLETE.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,7 +412,7 @@
 				A0026B1720972D0500B6926D /* URLSessionProtocol.swift in Sources */,
 				A060CA282096FF7700DAD27F /* Ad.swift in Sources */,
 				A060CA2A209702CC00DAD27F /* FLAPIClient.swift in Sources */,
-				A060C9FB2096F77200DAD27F /* ViewController.swift in Sources */,
+				A060C9FB2096F77200DAD27F /* AdViewController.swift in Sources */,
 				A060CA252096FF4400DAD27F /* APIError.swift in Sources */,
 				A060CA262096FF4400DAD27F /* APIResponse.swift in Sources */,
 				A060CA2C2097036400DAD27F /* Result.swift in Sources */,
