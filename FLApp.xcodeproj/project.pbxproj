@@ -147,6 +147,13 @@
 			path = "Ad Screen";
 			sourceTree = "<group>";
 		};
+		A0026B2420974D2400B6926D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		A060C9EC2096F77200DAD27F = {
 			isa = PBXGroup;
 			children = (
@@ -170,6 +177,7 @@
 		A060C9F72096F77200DAD27F /* FLApp */ = {
 			isa = PBXGroup;
 			children = (
+				A0026B2420974D2400B6926D /* Extensions */,
 				A0026B20209748B200B6926D /* Ad Screen */,
 				A060CA182096FEEB00DAD27F /* Service */,
 				A060C9F82096F77200DAD27F /* AppDelegate.swift */,
