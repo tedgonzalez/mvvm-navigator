@@ -1,0 +1,20 @@
+PODS:
+  - Disk (0.3.3)
+  - Kingfisher (4.7.0)
+
+DEPENDENCIES:
+  - Disk
+  - Kingfisher
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Disk
+    - Kingfisher
+
+SPEC CHECKSUMS:
+  Disk: d1f55cd61f6ca20f368232d0c6e37e3c3dfcb63e
+  Kingfisher: da6b005aa96d37698e3e4f1ccfe96a5b9bbf27d6
+
+PODFILE CHECKSUM: f38b7cf09af43aaf895936e7210d697318eba7b9
+
+COCOAPODS: 1.5.0
