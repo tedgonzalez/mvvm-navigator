@@ -21,6 +21,25 @@
 		A0026B2D2097523100B6926D /* Disk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0026B262097518400B6926D /* Disk.framework */; };
 		A0026B2E2097523100B6926D /* FinniversKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0026B272097518400B6926D /* FinniversKit.framework */; };
 		A0026B2F2097523100B6926D /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0026B282097518400B6926D /* Kingfisher.framework */; };
+		A0026B3120975D5200B6926D /* AdCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0026B3020975D5200B6926D /* AdCollectionViewCell.swift */; };
+		A0026B3320975E0100B6926D /* UICollectionViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0026B3220975E0100B6926D /* UICollectionViewExtensions.swift */; };
+		A0026B3520976AF000B6926D /* AdDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0026B3420976AF000B6926D /* AdDetailViewController.swift */; };
+		A0026B46209779A300B6926D /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0026B45209779A300B6926D /* Color.swift */; };
+		A0026B4F20977B4700B6926D /* Montserrat-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = A0026B4720977B4600B6926D /* Montserrat-Black.otf */; };
+		A0026B5020977B4700B6926D /* Montserrat-Hairline.otf in Resources */ = {isa = PBXBuildFile; fileRef = A0026B4820977B4600B6926D /* Montserrat-Hairline.otf */; };
+		A0026B5120977B4700B6926D /* Montserrat-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A0026B4920977B4600B6926D /* Montserrat-Bold.otf */; };
+		A0026B5220977B4700B6926D /* Montserrat-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = A0026B4A20977B4600B6926D /* Montserrat-Regular.otf */; };
+		A0026B5320977B4700B6926D /* Montserrat-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A0026B4B20977B4600B6926D /* Montserrat-SemiBold.otf */; };
+		A0026B5420977B4700B6926D /* Montserrat-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A0026B4C20977B4700B6926D /* Montserrat-ExtraBold.otf */; };
+		A0026B5520977B4700B6926D /* Montserrat-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = A0026B4D20977B4700B6926D /* Montserrat-Light.otf */; };
+		A0026B5620977B4700B6926D /* Montserrat-UltraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = A0026B4E20977B4700B6926D /* Montserrat-UltraLight.otf */; };
+		A0026B5820977B7700B6926D /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0026B5720977B7700B6926D /* Font.swift */; };
+		A0026B5C20978B5600B6926D /* AdViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0026B5B20978B5600B6926D /* AdViewModel.swift */; };
+		A0026B5F2097970F00B6926D /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0026B5E2097970F00B6926D /* DataManager.swift */; };
+		A0026B612097A84A00B6926D /* AdItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0026B602097A84A00B6926D /* AdItemViewModel.swift */; };
+		A0026B632097B1A100B6926D /* AdModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0026B622097B1A100B6926D /* AdModel.swift */; };
+		A0026B652097B1AF00B6926D /* AdImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0026B642097B1AF00B6926D /* AdImage.swift */; };
+		A0026B672097B1B700B6926D /* AdPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0026B662097B1B700B6926D /* AdPrice.swift */; };
 		A060C9F92096F77200DAD27F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A060C9F82096F77200DAD27F /* AppDelegate.swift */; };
 		A060C9FB2096F77200DAD27F /* AdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A060C9FA2096F77200DAD27F /* AdViewController.swift */; };
 		A060C9FE2096F77200DAD27F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A060C9FC2096F77200DAD27F /* Main.storyboard */; };
@@ -30,7 +49,7 @@
 		A060CA242096FF4400DAD27F /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A060CA1F2096FF4400DAD27F /* APIRequest.swift */; };
 		A060CA252096FF4400DAD27F /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A060CA202096FF4400DAD27F /* APIError.swift */; };
 		A060CA262096FF4400DAD27F /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A060CA212096FF4400DAD27F /* APIResponse.swift */; };
-		A060CA282096FF7700DAD27F /* Ad.swift in Sources */ = {isa = PBXBuildFile; fileRef = A060CA272096FF7700DAD27F /* Ad.swift */; };
+		A060CA282096FF7700DAD27F /* AdContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A060CA272096FF7700DAD27F /* AdContainer.swift */; };
 		A060CA2A209702CC00DAD27F /* FLAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A060CA29209702CC00DAD27F /* FLAPIClient.swift */; };
 		A060CA2C2097036400DAD27F /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = A060CA2B2097036400DAD27F /* Result.swift */; };
 		A060CA2E209703B800DAD27F /* GetAds.swift in Sources */ = {isa = PBXBuildFile; fileRef = A060CA2D209703B800DAD27F /* GetAds.swift */; };
@@ -57,6 +76,25 @@
 		A0026B262097518400B6926D /* Disk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Disk.framework; path = Carthage/Build/iOS/Disk.framework; sourceTree = "<group>"; };
 		A0026B272097518400B6926D /* FinniversKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FinniversKit.framework; path = Carthage/Build/iOS/FinniversKit.framework; sourceTree = "<group>"; };
 		A0026B282097518400B6926D /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
+		A0026B3020975D5200B6926D /* AdCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdCollectionViewCell.swift; sourceTree = "<group>"; };
+		A0026B3220975E0100B6926D /* UICollectionViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionViewExtensions.swift; sourceTree = "<group>"; };
+		A0026B3420976AF000B6926D /* AdDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdDetailViewController.swift; sourceTree = "<group>"; };
+		A0026B45209779A300B6926D /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		A0026B4720977B4600B6926D /* Montserrat-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Black.otf"; sourceTree = "<group>"; };
+		A0026B4820977B4600B6926D /* Montserrat-Hairline.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Hairline.otf"; sourceTree = "<group>"; };
+		A0026B4920977B4600B6926D /* Montserrat-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.otf"; sourceTree = "<group>"; };
+		A0026B4A20977B4600B6926D /* Montserrat-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.otf"; sourceTree = "<group>"; };
+		A0026B4B20977B4600B6926D /* Montserrat-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.otf"; sourceTree = "<group>"; };
+		A0026B4C20977B4700B6926D /* Montserrat-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraBold.otf"; sourceTree = "<group>"; };
+		A0026B4D20977B4700B6926D /* Montserrat-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.otf"; sourceTree = "<group>"; };
+		A0026B4E20977B4700B6926D /* Montserrat-UltraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-UltraLight.otf"; sourceTree = "<group>"; };
+		A0026B5720977B7700B6926D /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
+		A0026B5B20978B5600B6926D /* AdViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdViewModel.swift; sourceTree = "<group>"; };
+		A0026B5E2097970F00B6926D /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		A0026B602097A84A00B6926D /* AdItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdItemViewModel.swift; sourceTree = "<group>"; };
+		A0026B622097B1A100B6926D /* AdModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdModel.swift; sourceTree = "<group>"; };
+		A0026B642097B1AF00B6926D /* AdImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdImage.swift; sourceTree = "<group>"; };
+		A0026B662097B1B700B6926D /* AdPrice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdPrice.swift; sourceTree = "<group>"; };
 		A060C9F52096F77200DAD27F /* FLApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FLApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A060C9F82096F77200DAD27F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A060C9FA2096F77200DAD27F /* AdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdViewController.swift; sourceTree = "<group>"; };
@@ -70,7 +108,7 @@
 		A060CA1F2096FF4400DAD27F /* APIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		A060CA202096FF4400DAD27F /* APIError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		A060CA212096FF4400DAD27F /* APIResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIResponse.swift; sourceTree = "<group>"; };
-		A060CA272096FF7700DAD27F /* Ad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ad.swift; sourceTree = "<group>"; };
+		A060CA272096FF7700DAD27F /* AdContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdContainer.swift; sourceTree = "<group>"; };
 		A060CA29209702CC00DAD27F /* FLAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FLAPIClient.swift; sourceTree = "<group>"; };
 		A060CA2B2097036400DAD27F /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		A060CA2D209703B800DAD27F /* GetAds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetAds.swift; sourceTree = "<group>"; };
@@ -139,6 +177,10 @@
 			isa = PBXGroup;
 			children = (
 				A060C9FA2096F77200DAD27F /* AdViewController.swift */,
+				A0026B3020975D5200B6926D /* AdCollectionViewCell.swift */,
+				A0026B3420976AF000B6926D /* AdDetailViewController.swift */,
+				A0026B5B20978B5600B6926D /* AdViewModel.swift */,
+				A0026B602097A84A00B6926D /* AdItemViewModel.swift */,
 			);
 			path = "Ad Screen";
 			sourceTree = "<group>";
@@ -146,6 +188,7 @@
 		A0026B2420974D2400B6926D /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				A0026B3220975E0100B6926D /* UICollectionViewExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -158,6 +201,63 @@
 				A0026B282097518400B6926D /* Kingfisher.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A0026B362097752200B6926D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A0026B372097754400B6926D /* Fonts */,
+				A060C9FF2096F77300DAD27F /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A0026B372097754400B6926D /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				A0026B4720977B4600B6926D /* Montserrat-Black.otf */,
+				A0026B4920977B4600B6926D /* Montserrat-Bold.otf */,
+				A0026B4C20977B4700B6926D /* Montserrat-ExtraBold.otf */,
+				A0026B4820977B4600B6926D /* Montserrat-Hairline.otf */,
+				A0026B4D20977B4700B6926D /* Montserrat-Light.otf */,
+				A0026B4A20977B4600B6926D /* Montserrat-Regular.otf */,
+				A0026B4B20977B4600B6926D /* Montserrat-SemiBold.otf */,
+				A0026B4E20977B4700B6926D /* Montserrat-UltraLight.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		A0026B40209777AE00B6926D /* DNA */ = {
+			isa = PBXGroup;
+			children = (
+				A0026B44209779A300B6926D /* Color */,
+				A0026B41209777B600B6926D /* Font */,
+			);
+			path = DNA;
+			sourceTree = "<group>";
+		};
+		A0026B41209777B600B6926D /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				A0026B5720977B7700B6926D /* Font.swift */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		A0026B44209779A300B6926D /* Color */ = {
+			isa = PBXGroup;
+			children = (
+				A0026B45209779A300B6926D /* Color.swift */,
+			);
+			path = Color;
+			sourceTree = "<group>";
+		};
+		A0026B5D209796FA00B6926D /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				A0026B5E2097970F00B6926D /* DataManager.swift */,
+			);
+			path = Dependencies;
 			sourceTree = "<group>";
 		};
 		A060C9EC2096F77200DAD27F = {
@@ -182,12 +282,14 @@
 		A060C9F72096F77200DAD27F /* FLApp */ = {
 			isa = PBXGroup;
 			children = (
+				A0026B5D209796FA00B6926D /* Dependencies */,
+				A0026B40209777AE00B6926D /* DNA */,
 				A0026B2420974D2400B6926D /* Extensions */,
 				A0026B20209748B200B6926D /* Ad Screen */,
 				A060CA182096FEEB00DAD27F /* Service */,
 				A060C9F82096F77200DAD27F /* AppDelegate.swift */,
 				A060C9FC2096F77200DAD27F /* Main.storyboard */,
-				A060C9FF2096F77300DAD27F /* Assets.xcassets */,
+				A0026B362097752200B6926D /* Resources */,
 				A060CA012096F77300DAD27F /* LaunchScreen.storyboard */,
 				A060CA042096F77300DAD27F /* Info.plist */,
 			);
@@ -229,7 +331,10 @@
 		A060CA1B2096FF1500DAD27F /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				A060CA272096FF7700DAD27F /* Ad.swift */,
+				A060CA272096FF7700DAD27F /* AdContainer.swift */,
+				A0026B622097B1A100B6926D /* AdModel.swift */,
+				A0026B662097B1B700B6926D /* AdPrice.swift */,
+				A0026B642097B1AF00B6926D /* AdImage.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -327,7 +432,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0026B5520977B4700B6926D /* Montserrat-Light.otf in Resources */,
+				A0026B5420977B4700B6926D /* Montserrat-ExtraBold.otf in Resources */,
+				A0026B5020977B4700B6926D /* Montserrat-Hairline.otf in Resources */,
 				A060CA032096F77300DAD27F /* LaunchScreen.storyboard in Resources */,
+				A0026B5620977B4700B6926D /* Montserrat-UltraLight.otf in Resources */,
+				A0026B5120977B4700B6926D /* Montserrat-Bold.otf in Resources */,
+				A0026B5320977B4700B6926D /* Montserrat-SemiBold.otf in Resources */,
+				A0026B5220977B4700B6926D /* Montserrat-Regular.otf in Resources */,
+				A0026B4F20977B4700B6926D /* Montserrat-Black.otf in Resources */,
 				A0026B2220974C3200B6926D /* ADCONTAINER_COMPLETE.json in Resources */,
 				A060CA002096F77300DAD27F /* Assets.xcassets in Resources */,
 				A060C9FE2096F77200DAD27F /* Main.storyboard in Resources */,
@@ -369,15 +482,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0026B3520976AF000B6926D /* AdDetailViewController.swift in Sources */,
+				A0026B652097B1AF00B6926D /* AdImage.swift in Sources */,
 				A0026B1720972D0500B6926D /* URLSessionProtocol.swift in Sources */,
-				A060CA282096FF7700DAD27F /* Ad.swift in Sources */,
+				A060CA282096FF7700DAD27F /* AdContainer.swift in Sources */,
 				A060CA2A209702CC00DAD27F /* FLAPIClient.swift in Sources */,
+				A0026B46209779A300B6926D /* Color.swift in Sources */,
+				A0026B672097B1B700B6926D /* AdPrice.swift in Sources */,
 				A060C9FB2096F77200DAD27F /* AdViewController.swift in Sources */,
 				A060CA252096FF4400DAD27F /* APIError.swift in Sources */,
+				A0026B612097A84A00B6926D /* AdItemViewModel.swift in Sources */,
 				A060CA262096FF4400DAD27F /* APIResponse.swift in Sources */,
 				A060CA2C2097036400DAD27F /* Result.swift in Sources */,
+				A0026B5C20978B5600B6926D /* AdViewModel.swift in Sources */,
 				A060C9F92096F77200DAD27F /* AppDelegate.swift in Sources */,
+				A0026B3320975E0100B6926D /* UICollectionViewExtensions.swift in Sources */,
 				A0026B1920972D6300B6926D /* URLSessionDataTaskProtocol.swift in Sources */,
+				A0026B632097B1A100B6926D /* AdModel.swift in Sources */,
+				A0026B5820977B7700B6926D /* Font.swift in Sources */,
+				A0026B5F2097970F00B6926D /* DataManager.swift in Sources */,
+				A0026B3120975D5200B6926D /* AdCollectionViewCell.swift in Sources */,
 				A060CA2E209703B800DAD27F /* GetAds.swift in Sources */,
 				A060CA242096FF4400DAD27F /* APIRequest.swift in Sources */,
 			);
