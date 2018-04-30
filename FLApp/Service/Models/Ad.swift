@@ -38,6 +38,7 @@ extension AdContainer: Hashable {
 
 public struct AdModel: Decodable {
     public let adId: String
+    /// Can be one of the following ["REALESTATE", "CAR", "JOB", "BAP"]
     public let adType: String
     public let image: ImageModel?
     public let location: String?
