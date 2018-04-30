@@ -22,7 +22,6 @@ public class FLAPIClient {
                 do {
                     let container = try JSONDecoder().decode(T.Response.self, from: data)
                     completion(.success(container))
-
                 } catch {
                     print("some error \(error.localizedDescription)")
                     completion(.failure(error))
