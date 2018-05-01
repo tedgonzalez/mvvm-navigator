@@ -9,8 +9,17 @@
 import UIKit
 
 class FilterViewController: UIViewController {
-    var viewModel:FilterViewModel?
+    
+    // MARK: - Internal properties
+    
     @IBOutlet weak private var tableView: UITableView!
+    
+    // MARK: - External properties
+    
+    public var viewModel:FilterViewModel?
+    
+    
+    // MARK: - Setup
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
@@ -26,14 +35,15 @@ class FilterViewController: UIViewController {
 extension FilterViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (viewModel?.items.count)!
+        return viewModel!.items.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue(UITableViewCell.self, for: indexPath)
-        if let item = viewModel?.items[indexPath.row] {
-            cell.textLabel?.text = item.title
-            cell.accessoryType = item.isSelected ? .checkmark : .none
+        if let vm = viewModel {
+            let option = vm.items[indexPath.row]
+            cell.textLabel?.text = option.rawValue
+            cell.accessoryType = vm.selectedOption == option ? .checkmark : .none
         }
         return cell
     }
@@ -43,7 +53,7 @@ extension FilterViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let vm = viewModel {
             vm.didSelectOptionAtRow(row: indexPath.row)
-            tableView.reloadRows(at: [indexPath], with: .none)
+            tableView.reloadData()
         }
     }
 }

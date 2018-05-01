@@ -18,40 +18,36 @@ public enum FilterOption:String {
     public static var all:[FilterOption] = [.showFavorites, .showAll]
 }
 
-class FilterOptionItem {
-    let title: String
-    var isSelected: Bool
-    
-    init(title: String, isSelected: Bool) {
-        self.title = title
-        self.isSelected = isSelected
-    }
-}
-
 class FilterViewModel {
-    let items:[FilterOptionItem] = {
-        return FilterOption.all.map({ (option) -> FilterOptionItem in
-            FilterOptionItem(title: option.rawValue, isSelected: false)
-        })
+    
+    // MARK: - External properties
+    
+    var selectedOption: FilterOption = .showAll {
+        didSet {
+            self.delegate?.didChangeFilterOptions(option: selectedOption)
+        }
+    }
+    let items:[FilterOption] = {
+        return FilterOption.all
     }()
     
+    // MARK: - Internal properties
+    
     private weak var delegate:UpdateFilterOptionsDelegate?
+    
+    // MARK: - Setup
+    
     public init(delegate:UpdateFilterOptionsDelegate?) {
         self.delegate = delegate
     }
     
+    // MARK: - External methods
+    
     public func didSelectOptionAtRow(row: Int) {
-        let item = self.items[row]
-        item.isSelected = !item.isSelected
-        let selectedOptions = items.filter { (optionItem) -> Bool in
-            return optionItem.isSelected
-            }.map { (optionItem) -> FilterOption in
-                return FilterOption(rawValue: optionItem.title)!
+        var toggledOption = self.items[row]
+        if selectedOption == toggledOption {
+            toggledOption = .showAll
         }
-        if let selectedOption = selectedOptions.first {
-            self.delegate?.didChangeFilterOptions(option: selectedOption)
-        } else {
-            self.delegate?.didChangeFilterOptions(option: .showAll)
-        }
+        selectedOption = toggledOption
     }
 }
