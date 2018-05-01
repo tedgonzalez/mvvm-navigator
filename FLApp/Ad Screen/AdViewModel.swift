@@ -1,0 +1,94 @@
+//
+//  AdViewModel.swift
+//  FLApp
+//
+//  Created by Theodore Gonzalez on 4/30/18.
+//  Copyright © 2018 wandercodesfze. All rights reserved.
+//
+
+import Foundation
+import Disk
+
+enum AdViewModelNotification: String {
+    case filterUpdate = "filterUpdate"
+}
+class AdViewModel {
+    private var availableAds: [AdModel] = []
+    private var favorites: [AdModel] = []
+    public var selectedOption: FilterOption = .showAll
+    /// when new ads are received
+    private var availableAdViewModels: [AdItemViewModel] = []
+    /// Updated when non-favorites are hidden,
+    public var visibleAdViewModels: [AdItemViewModel] = []
+    init() {
+        favorites = retrieveFavorites()
+        
+        //TODO:
+        let path = Bundle.main.path(forResource: "ADCONTAINER_COMPLETE", ofType: "json")
+        let data = try! Data(contentsOf: URL(fileURLWithPath: path!), options:.alwaysMapped)
+        let container = try! JSONDecoder().decode(AdContainer.self, from: data)
+        availableAds = container.items!
+        setupAvailableAdViewModels()
+        visibleAdViewModels = availableAdViewModels
+    }
+    
+    private func setupAvailableAdViewModels() {
+        availableAdViewModels = availableAds.map { ad in
+            AdItemViewModel(model: ad, isFavorite: favorites.contains(ad), delegate:self)
+        }
+        for ad in favorites {
+            if availableAds.contains(ad) == false {
+                availableAdViewModels.append(AdItemViewModel(model: ad, isFavorite: true, delegate:self))
+            }
+        }
+    }
+}
+
+extension AdViewModel {
+    func retrieveFavorites() -> [AdModel] {
+        if let retrieved = try? Disk.retrieve(fileName(), from: .caches, as: [AdModel].self) {
+            return retrieved
+        } else {
+            return []
+        }
+    }
+    func saveFavorite(favorite: AdModel) {
+        try? Disk.append(favorite, to:fileName(), in:.caches)
+    }
+    func saveFavorites() {
+        try? Disk.save(favorites, to:.caches, as:fileName())
+    }
+    func fileName() -> String {
+        return "favorites.json"
+    }
+}
+
+extension AdViewModel: UpdateFavoritesDelegate {
+    func didAddFavorite(favorite: AdModel) {
+        favorites.append(favorite)
+        saveFavorite(favorite: favorite)
+    }
+    
+    func didRemoveFavorite(favorite: AdModel) {
+        favorites = favorites.filter({ (model) -> Bool in
+            return model != favorite
+        })
+        saveFavorites()
+    }
+}
+
+extension AdViewModel: UpdateFilterOptionsDelegate {
+    func didChangeFilterOptions(option: FilterOption) {
+        selectedOption = option
+        visibleAdViewModels.removeAll()
+        switch option {
+        case .showAll:
+            visibleAdViewModels = availableAdViewModels
+        case .showFavorites:
+            visibleAdViewModels = availableAdViewModels.filter({ (model) -> Bool in
+                return model.isFavorite
+            })
+        }
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: AdViewModelNotification.filterUpdate.rawValue), object: nil)
+    }
+}

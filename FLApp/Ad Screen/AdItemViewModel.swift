@@ -7,7 +7,7 @@
 //
 
 import Foundation
-protocol UpdateFavoritesProtocol: class {
+protocol UpdateFavoritesDelegate: class {
     func didAddFavorite(favorite:AdModel)
     func didRemoveFavorite(favorite:AdModel)
 }
@@ -17,7 +17,7 @@ class AdItemViewModel {
     let priceText: String
     let locationText: String
     let titleText: String
-    weak var delegate:UpdateFavoritesProtocol?
+    private weak var delegate:UpdateFavoritesDelegate?
     var isFavorite: Bool {
         didSet {
             if isFavorite {
@@ -28,7 +28,7 @@ class AdItemViewModel {
         }
     }
     
-    init(model: AdModel, isFavorite: Bool = true, delegate:UpdateFavoritesProtocol?) {
+    init(model: AdModel, isFavorite: Bool = true, delegate:UpdateFavoritesDelegate?) {
         self.model = model
         if let imgURL = model.image?.url {
             let baseUrl = "https://images.finncdn.no/dynamic/480x360c/"

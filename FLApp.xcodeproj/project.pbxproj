@@ -40,6 +40,12 @@
 		A0026B632097B1A100B6926D /* AdModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0026B622097B1A100B6926D /* AdModel.swift */; };
 		A0026B652097B1AF00B6926D /* AdImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0026B642097B1AF00B6926D /* AdImage.swift */; };
 		A0026B672097B1B700B6926D /* AdPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0026B662097B1B700B6926D /* AdPrice.swift */; };
+		A0026B6A20980D1B00B6926D /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0026B6920980D1B00B6926D /* FilterViewController.swift */; };
+		A0026B6C20980DD000B6926D /* FilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0026B6B20980DD000B6926D /* FilterViewModel.swift */; };
+		A0026B6F20980E7E00B6926D /* AppNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0026B6E20980E7E00B6926D /* AppNavigator.swift */; };
+		A0026B7120980EA300B6926D /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0026B7020980EA300B6926D /* Navigator.swift */; };
+		A0026B732098125900B6926D /* AdsNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0026B722098125900B6926D /* AdsNavigator.swift */; };
+		A0026B752098196E00B6926D /* UITableViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0026B742098196E00B6926D /* UITableViewExtensions.swift */; };
 		A060C9F92096F77200DAD27F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A060C9F82096F77200DAD27F /* AppDelegate.swift */; };
 		A060C9FB2096F77200DAD27F /* AdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A060C9FA2096F77200DAD27F /* AdViewController.swift */; };
 		A060C9FE2096F77200DAD27F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A060C9FC2096F77200DAD27F /* Main.storyboard */; };
@@ -95,6 +101,12 @@
 		A0026B622097B1A100B6926D /* AdModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdModel.swift; sourceTree = "<group>"; };
 		A0026B642097B1AF00B6926D /* AdImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdImage.swift; sourceTree = "<group>"; };
 		A0026B662097B1B700B6926D /* AdPrice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdPrice.swift; sourceTree = "<group>"; };
+		A0026B6920980D1B00B6926D /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
+		A0026B6B20980DD000B6926D /* FilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewModel.swift; sourceTree = "<group>"; };
+		A0026B6E20980E7E00B6926D /* AppNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNavigator.swift; sourceTree = "<group>"; };
+		A0026B7020980EA300B6926D /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
+		A0026B722098125900B6926D /* AdsNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsNavigator.swift; sourceTree = "<group>"; };
+		A0026B742098196E00B6926D /* UITableViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewExtensions.swift; sourceTree = "<group>"; };
 		A060C9F52096F77200DAD27F /* FLApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FLApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A060C9F82096F77200DAD27F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A060C9FA2096F77200DAD27F /* AdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdViewController.swift; sourceTree = "<group>"; };
@@ -188,6 +200,7 @@
 		A0026B2420974D2400B6926D /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				A0026B742098196E00B6926D /* UITableViewExtensions.swift */,
 				A0026B3220975E0100B6926D /* UICollectionViewExtensions.swift */,
 			);
 			path = Extensions;
@@ -260,6 +273,25 @@
 			path = Dependencies;
 			sourceTree = "<group>";
 		};
+		A0026B6820980CFD00B6926D /* Filter Screen */ = {
+			isa = PBXGroup;
+			children = (
+				A0026B6920980D1B00B6926D /* FilterViewController.swift */,
+				A0026B6B20980DD000B6926D /* FilterViewModel.swift */,
+			);
+			path = "Filter Screen";
+			sourceTree = "<group>";
+		};
+		A0026B6D20980E7000B6926D /* Navigator */ = {
+			isa = PBXGroup;
+			children = (
+				A0026B6E20980E7E00B6926D /* AppNavigator.swift */,
+				A0026B7020980EA300B6926D /* Navigator.swift */,
+				A0026B722098125900B6926D /* AdsNavigator.swift */,
+			);
+			path = Navigator;
+			sourceTree = "<group>";
+		};
 		A060C9EC2096F77200DAD27F = {
 			isa = PBXGroup;
 			children = (
@@ -282,6 +314,8 @@
 		A060C9F72096F77200DAD27F /* FLApp */ = {
 			isa = PBXGroup;
 			children = (
+				A0026B6D20980E7000B6926D /* Navigator */,
+				A0026B6820980CFD00B6926D /* Filter Screen */,
 				A0026B5D209796FA00B6926D /* Dependencies */,
 				A0026B40209777AE00B6926D /* DNA */,
 				A0026B2420974D2400B6926D /* Extensions */,
@@ -485,19 +519,25 @@
 				A0026B3520976AF000B6926D /* AdDetailViewController.swift in Sources */,
 				A0026B652097B1AF00B6926D /* AdImage.swift in Sources */,
 				A0026B1720972D0500B6926D /* URLSessionProtocol.swift in Sources */,
+				A0026B7120980EA300B6926D /* Navigator.swift in Sources */,
 				A060CA282096FF7700DAD27F /* AdContainer.swift in Sources */,
 				A060CA2A209702CC00DAD27F /* FLAPIClient.swift in Sources */,
 				A0026B46209779A300B6926D /* Color.swift in Sources */,
+				A0026B752098196E00B6926D /* UITableViewExtensions.swift in Sources */,
 				A0026B672097B1B700B6926D /* AdPrice.swift in Sources */,
 				A060C9FB2096F77200DAD27F /* AdViewController.swift in Sources */,
+				A0026B732098125900B6926D /* AdsNavigator.swift in Sources */,
 				A060CA252096FF4400DAD27F /* APIError.swift in Sources */,
 				A0026B612097A84A00B6926D /* AdItemViewModel.swift in Sources */,
+				A0026B6C20980DD000B6926D /* FilterViewModel.swift in Sources */,
 				A060CA262096FF4400DAD27F /* APIResponse.swift in Sources */,
 				A060CA2C2097036400DAD27F /* Result.swift in Sources */,
 				A0026B5C20978B5600B6926D /* AdViewModel.swift in Sources */,
+				A0026B6A20980D1B00B6926D /* FilterViewController.swift in Sources */,
 				A060C9F92096F77200DAD27F /* AppDelegate.swift in Sources */,
 				A0026B3320975E0100B6926D /* UICollectionViewExtensions.swift in Sources */,
 				A0026B1920972D6300B6926D /* URLSessionDataTaskProtocol.swift in Sources */,
+				A0026B6F20980E7E00B6926D /* AppNavigator.swift in Sources */,
 				A0026B632097B1A100B6926D /* AdModel.swift in Sources */,
 				A0026B5820977B7700B6926D /* Font.swift in Sources */,
 				A0026B5F2097970F00B6926D /* DataManager.swift in Sources */,
