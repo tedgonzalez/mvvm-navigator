@@ -21,13 +21,19 @@ public class FLAPIClient {
             if let data = data {
                 do {
                     let container = try JSONDecoder().decode(T.Response.self, from: data)
-                    completion(.success(container))
+                    DispatchQueue.main.async {
+                        completion(.success(container))
+                    }
                 } catch {
                     print("some error \(error.localizedDescription)")
-                    completion(.failure(error))
+                    DispatchQueue.main.async {
+                        completion(.failure(error))
+                    }
                 }
             } else if let error = error {
-                completion(.failure(error))
+                DispatchQueue.main.async {
+                    completion(.failure(error))
+                }
             }
         }
         task.resume()
