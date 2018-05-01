@@ -13,6 +13,7 @@ class AdsNavigator {
     private let adViewModel: AdViewModel = AdViewModel()
     init(navigationController: UINavigationController?) {
         self.navigationController = navigationController
+        self.adViewModel.navigator = self
     }
 }
 
@@ -20,6 +21,7 @@ extension AdsNavigator: Navigator {
     enum Destination {
         case adListScreen
         case filterScreen
+        case alert(message: String)
     }
     
     func start() {
@@ -37,6 +39,9 @@ extension AdsNavigator: Navigator {
             let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: String(describing: FilterViewController.self)) as! FilterViewController
             vc.viewModel = FilterViewModel(delegate: adViewModel, selectedOption: adViewModel.selectedOption)
             navigationController?.pushViewController(vc, animated: true)
+        case .alert(let message):
+            let alert = UIAlertController(title: "Oops", message: message, preferredStyle: .alert)
+            navigationController?.present(alert, animated: true, completion: nil)
         }
     }
 }

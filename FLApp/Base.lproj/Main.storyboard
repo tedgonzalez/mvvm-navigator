@@ -10,6 +10,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Montserrat-Regular.otf">
+            <string>Montserrat-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Ad View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -205,17 +210,29 @@
                                     <constraint firstAttribute="height" constant="260" id="i6F-h4-h4h"/>
                                 </constraints>
                             </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="lxW-3t-vfO">
+                                <rect key="frame" x="20" y="324" width="335" height="343"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="lxW-3t-vfO" firstAttribute="trailing" secondItem="ni2-fj-h84" secondAttribute="trailing" constant="-20" id="54V-fo-gGc"/>
                             <constraint firstItem="Mkj-TX-fWX" firstAttribute="top" secondItem="ni2-fj-h84" secondAttribute="top" id="9S6-aE-dMe"/>
+                            <constraint firstItem="lxW-3t-vfO" firstAttribute="bottom" secondItem="ni2-fj-h84" secondAttribute="bottom" id="FKI-BD-EWX"/>
+                            <constraint firstItem="lxW-3t-vfO" firstAttribute="leading" secondItem="ni2-fj-h84" secondAttribute="leading" constant="20" id="q78-F9-Hrq"/>
                             <constraint firstItem="Mkj-TX-fWX" firstAttribute="trailing" secondItem="ni2-fj-h84" secondAttribute="trailing" id="tl3-6g-E92"/>
+                            <constraint firstItem="lxW-3t-vfO" firstAttribute="top" secondItem="Mkj-TX-fWX" secondAttribute="bottom" id="uRt-lg-1dr"/>
                             <constraint firstItem="Mkj-TX-fWX" firstAttribute="leading" secondItem="ni2-fj-h84" secondAttribute="leading" id="z1l-Ls-1Bk"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ni2-fj-h84"/>
                     </view>
                     <connections>
                         <outlet property="ivAdPhoto" destination="Mkj-TX-fWX" id="Bzf-Qy-VVd"/>
+                        <outlet property="textView" destination="lxW-3t-vfO" id="2sq-I3-NWo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n2e-Rb-fg1" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -17,6 +17,9 @@ class AdItemViewModel {
     let priceText: String
     let locationText: String
     let titleText: String
+    var detailText: String {
+        return "Location: \(locationText)\nPrice: \(priceText)\n\(titleText)"
+    }
     private weak var delegate:UpdateFavoritesDelegate?
     var isFavorite: Bool {
         didSet {
