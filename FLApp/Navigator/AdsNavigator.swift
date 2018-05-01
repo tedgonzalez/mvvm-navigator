@@ -35,7 +35,7 @@ extension AdsNavigator: Navigator {
             navigationController?.setViewControllers([vc], animated: false)
         case .filterScreen:
             let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: String(describing: FilterViewController.self)) as! FilterViewController
-            vc.viewModel = FilterViewModel(delegate: adViewModel)
+            vc.viewModel = FilterViewModel(delegate: adViewModel, selectedOption: adViewModel.selectedOption)
             navigationController?.pushViewController(vc, animated: true)
         }
     }
