@@ -1,0 +1,11 @@
+framework module Disk {
+  umbrella header "Disk.h"
+
+  export *
+  module * { export * }
+}
+
+module Disk.Swift {
+    header "Disk-Swift.h"
+    requires objc
+}

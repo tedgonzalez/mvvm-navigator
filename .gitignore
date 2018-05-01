@@ -3,7 +3,7 @@
 # gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
 
 ## Build generated
-build/
+#build/
 DerivedData/
 
 ## Various settings
@@ -38,7 +38,7 @@ playground.xcworkspace
 # Packages/
 # Package.pins
 # Package.resolved
-.build/
+#.build/
 
 # CocoaPods
 #

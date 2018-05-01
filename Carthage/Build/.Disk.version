@@ -1,0 +1,18 @@
+{
+  "Mac" : [
+
+  ],
+  "watchOS" : [
+
+  ],
+  "tvOS" : [
+
+  ],
+  "commitish" : "0.3.3",
+  "iOS" : [
+    {
+      "name" : "Disk",
+      "hash" : "400ca7b2e9f32d4b985a213d171ff65ec33bce41646b479f8196d3ed673c7411"
+    }
+  ]
+}

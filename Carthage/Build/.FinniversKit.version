@@ -1,0 +1,18 @@
+{
+  "Mac" : [
+
+  ],
+  "watchOS" : [
+
+  ],
+  "tvOS" : [
+
+  ],
+  "commitish" : "ac9bcce48620d3d99332356108817b4d0f13dd99",
+  "iOS" : [
+    {
+      "name" : "FinniversKit",
+      "hash" : "60a0993c789430624e970ffbdd71dcf908647388632152bff062803cbb1dbc9c"
+    }
+  ]
+}
