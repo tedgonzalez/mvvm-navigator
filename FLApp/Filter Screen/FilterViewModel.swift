@@ -22,7 +22,7 @@ class FilterViewModel {
     
     // MARK: - External properties
     
-    var selectedOption: FilterOption = .showAll {
+    var selectedOption: FilterOption {
         didSet {
             self.delegate?.didChangeFilterOptions(option: selectedOption)
         }
@@ -37,8 +37,9 @@ class FilterViewModel {
     
     // MARK: - Setup
     
-    public init(delegate:UpdateFilterOptionsDelegate?) {
+    public init(delegate:UpdateFilterOptionsDelegate?, selectedOption: FilterOption = .showAll) {
         self.delegate = delegate
+        self.selectedOption = selectedOption
     }
     
     // MARK: - External methods

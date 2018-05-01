@@ -120,6 +120,9 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="lam-Tf-dlQ">
+                                <rect key="frame" x="169" y="164" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -127,6 +130,8 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="JjR-wr-GWb" secondAttribute="bottom" id="Eh4-Bp-8RQ"/>
                             <constraint firstItem="JjR-wr-GWb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="H3q-xK-6ej"/>
                             <constraint firstItem="JjR-wr-GWb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Osx-OY-DV0"/>
+                            <constraint firstItem="lam-Tf-dlQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Pft-s7-lzh"/>
+                            <constraint firstItem="lam-Tf-dlQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="xA6-VG-iX2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -138,6 +143,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="activityIndicator" destination="lam-Tf-dlQ" id="Hbx-7s-cHm"/>
                         <outlet property="collectionView" destination="JjR-wr-GWb" id="RWK-hb-O33"/>
                     </connections>
                 </viewController>

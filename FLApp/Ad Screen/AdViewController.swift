@@ -10,12 +10,23 @@ import UIKit
 import Kingfisher
 import Disk
 class AdViewController: UIViewController {
-    @IBOutlet weak var collectionView: UICollectionView!
-    var navigator: AdsNavigator?
-    var viewModel: AdViewModel?
+    
+    // MARK: - Internal properties
+    
+    @IBOutlet weak private var collectionView: UICollectionView!
+    @IBOutlet weak private var activityIndicator: UIActivityIndicatorView!
+    
+    // MARK: - External properties
+    
+    public var navigator: AdsNavigator?
+    public var viewModel: AdViewModel?
+    
+    // MARK: - Setup
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        updateData()
     }
     
     private func setup() {
@@ -23,6 +34,14 @@ class AdViewController: UIViewController {
         collectionView.delegate = self
         collectionView.backgroundColor = UIColor.lightGray
         NotificationCenter.default.addObserver(self, selector: #selector(reloadCollectionView), name: NSNotification.Name(rawValue: AdViewModelNotification.filterUpdate.rawValue), object: nil)
+    }
+    
+    private func updateData() {
+        activityIndicator.startAnimating()
+        viewModel?.getAds { [weak self] in
+            self?.activityIndicator.stopAnimating()
+            self?.reloadCollectionView()
+        }
     }
     
     deinit {

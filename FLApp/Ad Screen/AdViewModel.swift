@@ -13,26 +13,37 @@ enum AdViewModelNotification: String {
     case filterUpdate = "filterUpdate"
 }
 class AdViewModel {
+    
+    // MARK: - Internal properties
+    
     private var availableAds: [AdModel] = []
     private var favorites: [AdModel] = []
-    public var selectedOption: FilterOption = .showAll
-    /// when new ads are received
+    /// Updated when new ads are received
     private var availableAdViewModels: [AdItemViewModel] = []
+    
+    // MARK: - External properties
+    
+    public weak var navigator: AdsNavigator?
+    public var selectedOption: FilterOption = .showAll
     /// Updated when non-favorites are hidden,
     public var visibleAdViewModels: [AdItemViewModel] = []
+    
+    // MARK: - Setup
+    
     init() {
-        favorites = retrieveFavorites()
+        self.favorites = retrieveFavorites()
         
-        //TODO:
-        let path = Bundle.main.path(forResource: "ADCONTAINER_COMPLETE", ofType: "json")
-        let data = try! Data(contentsOf: URL(fileURLWithPath: path!), options:.alwaysMapped)
-        let container = try! JSONDecoder().decode(AdContainer.self, from: data)
-        availableAds = container.items!
-        setupAvailableAdViewModels()
-        visibleAdViewModels = availableAdViewModels
+//        //TODO:
+//        let path = Bundle.main.path(forResource: "ADCONTAINER_COMPLETE", ofType: "json")
+//        let data = try! Data(contentsOf: URL(fileURLWithPath: path!), options:.alwaysMapped)
+//        let container = try! JSONDecoder().decode(AdContainer.self, from: data)
+//        availableAds = container.items!
+        updateAvailableAdViewModels()
+        
     }
     
-    private func setupAvailableAdViewModels() {
+    private func updateAvailableAdViewModels() {
+        availableAdViewModels.removeAll()
         availableAdViewModels = availableAds.map { ad in
             AdItemViewModel(model: ad, isFavorite: favorites.contains(ad), delegate:self)
         }
@@ -41,6 +52,27 @@ class AdViewModel {
                 availableAdViewModels.append(AdItemViewModel(model: ad, isFavorite: true, delegate:self))
             }
         }
+        self.visibleAdViewModels = self.availableAdViewModels
+    }
+    
+     // MARK: - External methods
+    
+    public func getAds(with completion:@escaping () -> Void) {
+        FLAPIClient().send(GetAds()) {[weak self] (response) in
+            switch response {
+            case .success(let container):
+                if let ads = container.items {
+                    self?.availableAds = ads
+                    self?.updateAvailableAdViewModels()
+                }
+                
+                completion()
+            case .failure(let error):
+                self?.navigator?.navigate(to: .alert(message: error.localizedDescription))
+                completion()
+            }
+        }
+        
     }
 }
 
