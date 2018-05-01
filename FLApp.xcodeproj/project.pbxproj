@@ -35,7 +35,6 @@
 		A0026B5620977B4700B6926D /* Montserrat-UltraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = A0026B4E20977B4700B6926D /* Montserrat-UltraLight.otf */; };
 		A0026B5820977B7700B6926D /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0026B5720977B7700B6926D /* Font.swift */; };
 		A0026B5C20978B5600B6926D /* AdViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0026B5B20978B5600B6926D /* AdViewModel.swift */; };
-		A0026B5F2097970F00B6926D /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0026B5E2097970F00B6926D /* DataManager.swift */; };
 		A0026B612097A84A00B6926D /* AdItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0026B602097A84A00B6926D /* AdItemViewModel.swift */; };
 		A0026B632097B1A100B6926D /* AdModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0026B622097B1A100B6926D /* AdModel.swift */; };
 		A0026B652097B1AF00B6926D /* AdImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0026B642097B1AF00B6926D /* AdImage.swift */; };
@@ -96,7 +95,6 @@
 		A0026B4E20977B4700B6926D /* Montserrat-UltraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-UltraLight.otf"; sourceTree = "<group>"; };
 		A0026B5720977B7700B6926D /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		A0026B5B20978B5600B6926D /* AdViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdViewModel.swift; sourceTree = "<group>"; };
-		A0026B5E2097970F00B6926D /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		A0026B602097A84A00B6926D /* AdItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdItemViewModel.swift; sourceTree = "<group>"; };
 		A0026B622097B1A100B6926D /* AdModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdModel.swift; sourceTree = "<group>"; };
 		A0026B642097B1AF00B6926D /* AdImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdImage.swift; sourceTree = "<group>"; };
@@ -265,14 +263,6 @@
 			path = Color;
 			sourceTree = "<group>";
 		};
-		A0026B5D209796FA00B6926D /* Dependencies */ = {
-			isa = PBXGroup;
-			children = (
-				A0026B5E2097970F00B6926D /* DataManager.swift */,
-			);
-			path = Dependencies;
-			sourceTree = "<group>";
-		};
 		A0026B6820980CFD00B6926D /* Filter Screen */ = {
 			isa = PBXGroup;
 			children = (
@@ -285,9 +275,9 @@
 		A0026B6D20980E7000B6926D /* Navigator */ = {
 			isa = PBXGroup;
 			children = (
-				A0026B6E20980E7E00B6926D /* AppNavigator.swift */,
 				A0026B7020980EA300B6926D /* Navigator.swift */,
 				A0026B722098125900B6926D /* AdsNavigator.swift */,
+				A0026B6E20980E7E00B6926D /* AppNavigator.swift */,
 			);
 			path = Navigator;
 			sourceTree = "<group>";
@@ -316,7 +306,6 @@
 			children = (
 				A0026B6D20980E7000B6926D /* Navigator */,
 				A0026B6820980CFD00B6926D /* Filter Screen */,
-				A0026B5D209796FA00B6926D /* Dependencies */,
 				A0026B40209777AE00B6926D /* DNA */,
 				A0026B2420974D2400B6926D /* Extensions */,
 				A0026B20209748B200B6926D /* Ad Screen */,
@@ -540,7 +529,6 @@
 				A0026B6F20980E7E00B6926D /* AppNavigator.swift in Sources */,
 				A0026B632097B1A100B6926D /* AdModel.swift in Sources */,
 				A0026B5820977B7700B6926D /* Font.swift in Sources */,
-				A0026B5F2097970F00B6926D /* DataManager.swift in Sources */,
 				A0026B3120975D5200B6926D /* AdCollectionViewCell.swift in Sources */,
 				A060CA2E209703B800DAD27F /* GetAds.swift in Sources */,
 				A060CA242096FF4400DAD27F /* APIRequest.swift in Sources */,

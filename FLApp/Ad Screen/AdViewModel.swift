@@ -18,28 +18,19 @@ class AdViewModel {
     
     private var availableAds: [AdModel] = []
     private var favorites: [AdModel] = []
-    /// Updated when new ads are received
     private var availableAdViewModels: [AdItemViewModel] = []
     
     // MARK: - External properties
     
     public weak var navigator: AdsNavigator?
-    public var selectedOption: FilterOption = .showAll
-    /// Updated when non-favorites are hidden,
-    public var visibleAdViewModels: [AdItemViewModel] = []
+    public private(set) var selectedOption: FilterOption = .showAll
+    public private(set) var visibleAdViewModels: [AdItemViewModel] = []
     
     // MARK: - Setup
     
     init() {
         self.favorites = retrieveFavorites()
-        
-//        //TODO:
-//        let path = Bundle.main.path(forResource: "ADCONTAINER_COMPLETE", ofType: "json")
-//        let data = try! Data(contentsOf: URL(fileURLWithPath: path!), options:.alwaysMapped)
-//        let container = try! JSONDecoder().decode(AdContainer.self, from: data)
-//        availableAds = container.items!
         updateAvailableAdViewModels()
-        
     }
     
     private func updateAvailableAdViewModels() {
@@ -72,7 +63,6 @@ class AdViewModel {
                 completion()
             }
         }
-        
     }
 }
 
