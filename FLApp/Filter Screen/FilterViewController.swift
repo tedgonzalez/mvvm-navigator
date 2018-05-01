@@ -30,6 +30,10 @@ class FilterViewController: UIViewController {
         tableView.delegate = self
         tableView.allowsMultipleSelection = false
     }
+    
+    deinit {
+        print(String(describing: self) + "is deallocated")
+    }
 }
 
 extension FilterViewController: UITableViewDataSource {
