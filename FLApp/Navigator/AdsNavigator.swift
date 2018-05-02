@@ -41,6 +41,7 @@ extension AdsNavigator: Navigator {
             navigationController?.pushViewController(vc, animated: true)
         case .alert(let message):
             let alert = UIAlertController(title: "Oops", message: message, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             navigationController?.present(alert, animated: true, completion: nil)
         }
     }
