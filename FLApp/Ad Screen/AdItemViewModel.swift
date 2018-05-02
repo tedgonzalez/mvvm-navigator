@@ -12,7 +12,7 @@ protocol UpdateFavoritesDelegate: class {
     func didRemoveFavorite(favorite:AdModel)
 }
 class AdItemViewModel {
-    let model: AdModel
+    private let model: AdModel
     let downloadUrl: URL?
     let priceText: String
     let locationText: String
