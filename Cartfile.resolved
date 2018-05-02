@@ -1,3 +1,4 @@
-github "finn-no/FinniversKit" "ac9bcce48620d3d99332356108817b4d0f13dd99"
+github "ashleymills/Reachability.swift" "v4.1.0"
+github "finn-no/FinniversKit" "d3a9ab3466d63ac3b063e0cf68be28a015d13d41"
 github "onevcat/Kingfisher" "4.7.0"
 github "saoudrizwan/Disk" "0.3.3"

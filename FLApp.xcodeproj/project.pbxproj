@@ -45,6 +45,7 @@
 		A0026B7120980EA300B6926D /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0026B7020980EA300B6926D /* Navigator.swift */; };
 		A0026B732098125900B6926D /* AdsNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0026B722098125900B6926D /* AdsNavigator.swift */; };
 		A0026B752098196E00B6926D /* UITableViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0026B742098196E00B6926D /* UITableViewExtensions.swift */; };
+		A0026B772099E7B000B6926D /* Reachability.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0026B762099E7B000B6926D /* Reachability.framework */; };
 		A060C9F92096F77200DAD27F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A060C9F82096F77200DAD27F /* AppDelegate.swift */; };
 		A060C9FB2096F77200DAD27F /* AdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A060C9FA2096F77200DAD27F /* AdViewController.swift */; };
 		A060C9FE2096F77200DAD27F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A060C9FC2096F77200DAD27F /* Main.storyboard */; };
@@ -105,6 +106,7 @@
 		A0026B7020980EA300B6926D /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
 		A0026B722098125900B6926D /* AdsNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsNavigator.swift; sourceTree = "<group>"; };
 		A0026B742098196E00B6926D /* UITableViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewExtensions.swift; sourceTree = "<group>"; };
+		A0026B762099E7B000B6926D /* Reachability.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Reachability.framework; path = Carthage/Build/iOS/Reachability.framework; sourceTree = "<group>"; };
 		A060C9F52096F77200DAD27F /* FLApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FLApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A060C9F82096F77200DAD27F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A060C9FA2096F77200DAD27F /* AdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdViewController.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0026B772099E7B000B6926D /* Reachability.framework in Frameworks */,
 				A0026B292097518400B6926D /* Disk.framework in Frameworks */,
 				A0026B2A2097518400B6926D /* FinniversKit.framework in Frameworks */,
 				A0026B2B2097518400B6926D /* Kingfisher.framework in Frameworks */,
@@ -207,6 +210,7 @@
 		A0026B252097518400B6926D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A0026B762099E7B000B6926D /* Reachability.framework */,
 				A0026B262097518400B6926D /* Disk.framework */,
 				A0026B272097518400B6926D /* FinniversKit.framework */,
 				A0026B282097518400B6926D /* Kingfisher.framework */,
@@ -491,6 +495,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Disk.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/FinniversKit.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Reachability.framework",
 			);
 			outputPaths = (
 			);
@@ -695,6 +700,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FEZUJN6AM9;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -716,6 +722,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FEZUJN6AM9;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",

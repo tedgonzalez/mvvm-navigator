@@ -8,13 +8,15 @@
 
 import UIKit
 import Kingfisher
-import Disk
+import Reachability
+
 class AdViewController: UIViewController {
     
     // MARK: - Internal properties
     
     @IBOutlet weak private var collectionView: UICollectionView!
     @IBOutlet weak private var activityIndicator: UIActivityIndicatorView!
+    private let reachability = Reachability()!
     
     // MARK: - External properties
     
@@ -26,6 +28,7 @@ class AdViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        setupReachability()
         updateData()
     }
     
@@ -36,6 +39,8 @@ class AdViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(reloadCollectionView), name: NSNotification.Name(rawValue: AdViewModelNotification.filterUpdate.rawValue), object: nil)
     }
     
+    
+    
     private func updateData() {
         activityIndicator.startAnimating()
         viewModel?.getAds { [weak self] in
@@ -45,6 +50,7 @@ class AdViewController: UIViewController {
     }
     
     deinit {
+        reachability.stopNotifier()
         NotificationCenter.default.removeObserver(self)
     }
     
@@ -67,6 +73,30 @@ class AdViewController: UIViewController {
     @objc func reloadCollectionView() {
         DispatchQueue.main.async {
             self.collectionView.reloadData()
+        }
+    }
+}
+
+// MARK: - Reachability
+
+extension AdViewController {
+    private func setupReachability() {
+        NotificationCenter.default.addObserver(self, selector: #selector(reachabilityChanged(note:)), name: .reachabilityChanged, object: reachability)
+        do {
+            try reachability.startNotifier()
+        } catch {
+            print("could not start reachability notifier")
+        }
+    }
+    
+    @objc private func reachabilityChanged(note: Notification) {
+        switch reachability.connection {
+        case .wifi:
+            fallthrough
+        case .cellular:
+            updateData()
+        case .none:
+            print("Network not reachable")
         }
     }
 }

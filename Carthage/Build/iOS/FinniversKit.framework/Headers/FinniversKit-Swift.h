@@ -263,6 +263,52 @@ SWIFT_CLASS("_TtC12FinniversKit9EmptyView")
 @end
 
 
+SWIFT_CLASS("_TtC12FinniversKit15GridPreviewCell")
+@interface GridPreviewCell : UICollectionViewCell
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+- (void)prepareForReuse;
+@end
+
+
+
+
+SWIFT_CLASS("_TtC12FinniversKit19GridPreviewListView")
+@interface GridPreviewListView : UIView
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+
+@class UICollectionView;
+@class UIScrollView;
+
+@interface GridPreviewListView (SWIFT_EXTENSION(FinniversKit)) <UICollectionViewDelegate>
+- (void)collectionView:(UICollectionView * _Nonnull)collectionView didSelectItemAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
+- (void)scrollViewDidScroll:(UIScrollView * _Nonnull)scrollView;
+@end
+
+
+
+@class UICollectionReusableView;
+
+@interface GridPreviewListView (SWIFT_EXTENSION(FinniversKit)) <UICollectionViewDataSource>
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView * _Nonnull)collectionView SWIFT_WARN_UNUSED_RESULT;
+- (NSInteger)collectionView:(UICollectionView * _Nonnull)collectionView numberOfItemsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
+- (UICollectionViewCell * _Nonnull)collectionView:(UICollectionView * _Nonnull)collectionView cellForItemAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
+- (void)collectionView:(UICollectionView * _Nonnull)collectionView willDisplayCell:(UICollectionViewCell * _Nonnull)cell forItemAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
+- (UICollectionReusableView * _Nonnull)collectionView:(UICollectionView * _Nonnull)collectionView viewForSupplementaryElementOfKind:(NSString * _Nonnull)kind atIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
+@end
+
+
+SWIFT_CLASS("_TtC12FinniversKit15GridPreviewView")
+@interface GridPreviewView : UIView
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
 SWIFT_CLASS("_TtC12FinniversKit17InlineConsentView")
 @interface InlineConsentView : UIView
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
@@ -290,35 +336,34 @@ SWIFT_CLASS("_TtC12FinniversKit9LoginView")
 
 
 
-SWIFT_CLASS("_TtC12FinniversKit14MarketGridCell")
-@interface MarketGridCell : UICollectionViewCell
+SWIFT_CLASS("_TtC12FinniversKit10MarketCell")
+@interface MarketCell : UICollectionViewCell
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 - (void)prepareForReuse;
 @end
 
 
-SWIFT_CLASS("_TtC12FinniversKit14MarketGridView")
-@interface MarketGridView : UIView
+SWIFT_CLASS("_TtC12FinniversKit14MarketListView")
+@interface MarketListView : UIView
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class UICollectionView;
 
-@interface MarketGridView (SWIFT_EXTENSION(FinniversKit)) <UICollectionViewDelegate>
+@interface MarketListView (SWIFT_EXTENSION(FinniversKit)) <UICollectionViewDelegate>
 - (void)collectionView:(UICollectionView * _Nonnull)collectionView didSelectItemAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
 @end
 
 
-@interface MarketGridView (SWIFT_EXTENSION(FinniversKit)) <UICollectionViewDataSource>
+@interface MarketListView (SWIFT_EXTENSION(FinniversKit)) <UICollectionViewDataSource>
 - (NSInteger)collectionView:(UICollectionView * _Nonnull)collectionView numberOfItemsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
 - (UICollectionViewCell * _Nonnull)collectionView:(UICollectionView * _Nonnull)collectionView cellForItemAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
 @end
 
 @class UICollectionViewLayout;
 
-@interface MarketGridView (SWIFT_EXTENSION(FinniversKit)) <UICollectionViewDelegateFlowLayout>
+@interface MarketListView (SWIFT_EXTENSION(FinniversKit)) <UICollectionViewDelegateFlowLayout>
 - (CGSize)collectionView:(UICollectionView * _Nonnull)collectionView layout:(UICollectionViewLayout * _Nonnull)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
 - (UIEdgeInsets)collectionView:(UICollectionView * _Nonnull)collectionView layout:(UICollectionViewLayout * _Nonnull)collectionViewLayout insetForSectionAtIndex:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
 - (CGFloat)collectionView:(UICollectionView * _Nonnull)collectionView layout:(UICollectionViewLayout * _Nonnull)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
@@ -326,42 +371,13 @@ SWIFT_CLASS("_TtC12FinniversKit14MarketGridView")
 @end
 
 
-
-
-SWIFT_CLASS("_TtC12FinniversKit15PreviewGridCell")
-@interface PreviewGridCell : UICollectionViewCell
-- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
-- (void)prepareForReuse;
-@end
-
-
-SWIFT_CLASS("_TtC12FinniversKit15PreviewGridView")
-@interface PreviewGridView : UIView
+SWIFT_CLASS("_TtC12FinniversKit10MarketView")
+@interface MarketView : UIView
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
 
-
-@class UIScrollView;
-
-@interface PreviewGridView (SWIFT_EXTENSION(FinniversKit)) <UICollectionViewDelegate>
-- (void)collectionView:(UICollectionView * _Nonnull)collectionView didSelectItemAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
-- (void)scrollViewDidScroll:(UIScrollView * _Nonnull)scrollView;
-@end
-
-
-
-@class UICollectionReusableView;
-
-@interface PreviewGridView (SWIFT_EXTENSION(FinniversKit)) <UICollectionViewDataSource>
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView * _Nonnull)collectionView SWIFT_WARN_UNUSED_RESULT;
-- (NSInteger)collectionView:(UICollectionView * _Nonnull)collectionView numberOfItemsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
-- (UICollectionViewCell * _Nonnull)collectionView:(UICollectionView * _Nonnull)collectionView cellForItemAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
-- (void)collectionView:(UICollectionView * _Nonnull)collectionView willDisplayCell:(UICollectionViewCell * _Nonnull)cell forItemAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
-- (UICollectionReusableView * _Nonnull)collectionView:(UICollectionView * _Nonnull)collectionView viewForSupplementaryElementOfKind:(NSString * _Nonnull)kind atIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
-@end
 
 
 SWIFT_CLASS("_TtC12FinniversKit12RegisterView")
