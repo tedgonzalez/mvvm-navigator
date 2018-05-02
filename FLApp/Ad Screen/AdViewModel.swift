@@ -9,9 +9,16 @@
 import Foundation
 import Disk
 
-enum AdViewModelNotification: String {
-    case filterUpdate = "filterUpdate"
+protocol VisibleItemsObserver: class {
+    func didUpdateVisibleItems()
 }
+
+protocol VisibleItemsObservable: class {
+    func addObserver(observer: VisibleItemsObserver)
+    func removeObserver(observer: VisibleItemsObserver)
+    func notifyObservers()
+}
+
 class AdViewModel {
     
     // MARK: - Internal properties
@@ -19,12 +26,17 @@ class AdViewModel {
     private var availableAds: [AdModel] = []
     private var favorites: [AdModel] = []
     private var availableAdViewModels: [AdItemViewModel] = []
+    private var observers: [VisibleItemsObserver] = []
     
     // MARK: - External properties
     
     public weak var navigator: AdsNavigator?
     public private(set) var selectedOption: FilterOption = .showAll
-    public private(set) var visibleAdViewModels: [AdItemViewModel] = []
+    public private(set) var visibleAdViewModels: [AdItemViewModel] = [] {
+        didSet {
+            self.notifyObservers()
+        }
+    }
     
     // MARK: - Setup
     
@@ -91,13 +103,23 @@ extension AdViewModel: UpdateFavoritesDelegate {
     func didAddFavorite(favorite: AdModel) {
         favorites.append(favorite)
         saveFavorite(favorite: favorite)
+        self.notifyObservers()
     }
     
     func didRemoveFavorite(favorite: AdModel) {
-        favorites = favorites.filter({ (model) -> Bool in
-            return model != favorite
-        })
+        guard let index = favorites.index(of: favorite) else {
+            return
+        }
+        
+        favorites.remove(at: index)
         saveFavorites()
+        if selectedOption == .showFavorites {
+            visibleAdViewModels = availableAdViewModels.filter({ (model) -> Bool in
+                return model.isFavorite
+            })
+        } else {
+            self.notifyObservers()
+        }
     }
 }
 
@@ -113,6 +135,25 @@ extension AdViewModel: UpdateFilterOptionsDelegate {
                 return model.isFavorite
             })
         }
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: AdViewModelNotification.filterUpdate.rawValue), object: nil)
+    }
+}
+
+extension AdViewModel: VisibleItemsObservable {
+    func addObserver(observer: VisibleItemsObserver) {
+        if observers.contains(where: { $0 === observer }) == false {
+            observers.append(observer)
+        }
+    }
+    
+    func removeObserver(observer: VisibleItemsObserver) {
+        if let index = observers.index(where: { $0 === observer }) {
+            observers.remove(at: index)
+        }
+    }
+    
+    func notifyObservers() {
+        observers.forEach { (observer) in
+            observer.didUpdateVisibleItems()
+        }
     }
 }

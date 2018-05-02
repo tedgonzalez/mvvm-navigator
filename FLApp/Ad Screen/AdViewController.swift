@@ -21,7 +21,11 @@ class AdViewController: UIViewController {
     // MARK: - External properties
     
     public var navigator: AdsNavigator?
-    public var viewModel: AdViewModel?
+    public var viewModel: AdViewModel? {
+        didSet {
+            viewModel?.addObserver(observer: self)
+        }
+    }
     
     // MARK: - Setup
     
@@ -36,16 +40,12 @@ class AdViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.backgroundColor = UIColor.lightGray
-        NotificationCenter.default.addObserver(self, selector: #selector(reloadCollectionView), name: NSNotification.Name(rawValue: AdViewModelNotification.filterUpdate.rawValue), object: nil)
     }
-    
-    
     
     private func updateData() {
         activityIndicator.startAnimating()
         viewModel?.getAds { [weak self] in
             self?.activityIndicator.stopAnimating()
-            self?.reloadCollectionView()
         }
     }
     
@@ -101,6 +101,12 @@ extension AdViewController {
     }
 }
 
+extension AdViewController: VisibleItemsObserver {
+    func didUpdateVisibleItems() {
+        self.reloadCollectionView()
+    }
+}
+
 extension AdViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel!.visibleAdViewModels.count
@@ -109,9 +115,6 @@ extension AdViewController: UICollectionViewDataSource {
         let item = viewModel?.visibleAdViewModels[indexPath.row]
         let cell = collectionView.dequeue(AdCollectionViewCell.self, for: indexPath)
         cell.model = item
-        cell.didTapFavoriteBlock = {(sender) in
-            collectionView.reloadItems(at: [indexPath])
-        }
         return cell
     }
 }

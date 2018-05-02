@@ -24,6 +24,10 @@ class AdCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        setup()
+    }
+    
+    private func setup() {
         layer.borderColor = UIColor.gray.cgColor
         layer.borderWidth = 1
         layer.cornerRadius = 2
@@ -34,17 +38,10 @@ class AdCollectionViewCell: UICollectionViewCell {
         titleLabel.font = UIFont(name: FontType.light.rawValue, size: 12)
         locationLabel.font = UIFont(name: FontType.light.rawValue, size: 12)
         favoriteButton.tintColor = .white
-        
+        favoriteButton.addTarget(self, action: #selector(didTapFavorite(sender:)), for: .touchDown)
         let color = UIColor(white: 0, alpha: 0.5)
         buttonBackgroundView.backgroundColor = color
         priceBackgroundView.backgroundColor = color
-    }
-    
-    // MARK: - Superclass Overrides
-    
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        didTapFavoriteBlock = nil
     }
     
     // MARK: - Dependency injection
@@ -63,24 +60,12 @@ class AdCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    public var didTapFavoriteBlock: ((UIButton) -> ())? {
-        didSet {
-            let action = #selector(didTapFavorite(sender:))
-            if didTapFavoriteBlock != nil {
-                favoriteButton.addTarget(self, action:action, for: .touchUpInside)
-            } else {
-                favoriteButton.removeTarget(self, action:action, for: .touchUpInside)
-            }
-        }
-    }
     
     // MARK: - Actions
     
     @objc func didTapFavorite(sender: UIButton) {
         if let model = self.model {
             model.isFavorite = !model.isFavorite
-            
         }
-        didTapFavoriteBlock?(sender)
     }
 }
