@@ -66,6 +66,8 @@ class AdViewModel {
     }
 }
 
+// MARK: - Storage
+
 extension AdViewModel {
     func retrieveFavorites() -> [AdModel] {
         if let retrieved = try? Disk.retrieve(fileName(), from: .caches, as: [AdModel].self) {
