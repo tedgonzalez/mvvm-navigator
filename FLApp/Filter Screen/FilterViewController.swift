@@ -20,6 +20,7 @@ class FilterViewController: UIViewController {
     
     
     // MARK: - Setup
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
@@ -29,6 +30,7 @@ class FilterViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.allowsMultipleSelection = false
+        title = viewModel?.title
     }
     
     deinit {

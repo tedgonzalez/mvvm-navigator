@@ -23,6 +23,7 @@ class AdViewController: UIViewController {
     public var navigator: AdsNavigator?
     public var viewModel: AdViewModel? {
         didSet {
+            title = viewModel?.title
             viewModel?.addObserver(observer: self)
         }
     }

@@ -24,9 +24,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     private func setupAppearance() {
+        let titleAttributes  = [NSAttributedStringKey.foregroundColor : UIColor.white, NSAttributedStringKey.font : UIFont(name: FontType.bold.rawValue, size: 16)!]
+        let buttonAttributes = [NSAttributedStringKey.foregroundColor : UIColor.white, NSAttributedStringKey.font : UIFont(name: FontType.semiBold.rawValue, size: 14)!]
         let navBarAppearance = UINavigationBar.appearance()
         navBarAppearance.tintColor = .white
         navBarAppearance.barTintColor = .secondaryBlue
+        navBarAppearance.titleTextAttributes = titleAttributes
+        
+        let barButtonItemAppearance = UIBarButtonItem.appearance()
+        barButtonItemAppearance.setTitleTextAttributes(buttonAttributes, for: .normal)
     }
     
     func applicationWillResignActive(_ application: UIApplication) {

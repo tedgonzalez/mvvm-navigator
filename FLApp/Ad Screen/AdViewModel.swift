@@ -29,7 +29,7 @@ class AdViewModel {
     private var observers: [VisibleItemsObserver] = []
     
     // MARK: - External properties
-    
+    public let title: String = "Home"
     public weak var navigator: AdsNavigator?
     public private(set) var selectedOption: FilterOption = .showAll
     public private(set) var visibleAdViewModels: [AdItemViewModel] = [] {

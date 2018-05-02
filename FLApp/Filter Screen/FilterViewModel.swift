@@ -22,14 +22,13 @@ class FilterViewModel {
     
     // MARK: - External properties
     
-    var selectedOption: FilterOption {
+    public let title = "Select filter"
+    public let items:[FilterOption] = FilterOption.all
+    public var selectedOption: FilterOption {
         didSet {
             self.delegate?.didChangeFilterOptions(option: selectedOption)
         }
     }
-    let items:[FilterOption] = {
-        return FilterOption.all
-    }()
     
     // MARK: - Internal properties
     

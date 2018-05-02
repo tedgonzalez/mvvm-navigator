@@ -12,16 +12,23 @@ protocol UpdateFavoritesDelegate: class {
     func didRemoveFavorite(favorite:AdModel)
 }
 class AdItemViewModel {
+    
+    // MARK: - Internal properties
+    
     private let model: AdModel
-    let downloadUrl: URL?
-    let priceText: String
-    let locationText: String
-    let titleText: String
-    var detailText: String {
+    private weak var delegate:UpdateFavoritesDelegate?
+    
+    // MARK: - External properties
+    
+    public let downloadUrl: URL?
+    public let priceText: String
+    public let locationText: String
+    public let titleText: String
+    public var detailText: String {
         return "Location: \(locationText)\nPrice: \(priceText)\n\(titleText)"
     }
-    private weak var delegate:UpdateFavoritesDelegate?
-    var isFavorite: Bool {
+    
+    public var isFavorite: Bool {
         didSet {
             if isFavorite {
                 delegate?.didAddFavorite(favorite: model)
@@ -30,6 +37,8 @@ class AdItemViewModel {
             }
         }
     }
+    
+    // MARK: - Setup
     
     init(model: AdModel, isFavorite: Bool = true, delegate:UpdateFavoritesDelegate?) {
         self.model = model
