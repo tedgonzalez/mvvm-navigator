@@ -7,10 +7,12 @@
 //
 
 import Foundation
+
 protocol UpdateFavoritesDelegate: class {
     func didAddFavorite(favorite:AdModel)
     func didRemoveFavorite(favorite:AdModel)
 }
+
 class AdItemViewModel {
     
     // MARK: - Internal properties

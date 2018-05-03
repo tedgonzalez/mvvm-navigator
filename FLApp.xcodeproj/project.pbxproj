@@ -189,11 +189,8 @@
 		A0026B20209748B200B6926D /* Ad Screen */ = {
 			isa = PBXGroup;
 			children = (
-				A060C9FA2096F77200DAD27F /* AdViewController.swift */,
-				A0026B3020975D5200B6926D /* AdCollectionViewCell.swift */,
-				A0026B3420976AF000B6926D /* AdDetailViewController.swift */,
-				A0026B5B20978B5600B6926D /* AdViewModel.swift */,
-				A0026B602097A84A00B6926D /* AdItemViewModel.swift */,
+				A0026B7B209B056600B6926D /* Views */,
+				A0026B78209B054600B6926D /* ViewModels */,
 			);
 			path = "Ad Screen";
 			sourceTree = "<group>";
@@ -270,20 +267,55 @@
 		A0026B6820980CFD00B6926D /* Filter Screen */ = {
 			isa = PBXGroup;
 			children = (
-				A0026B6920980D1B00B6926D /* FilterViewController.swift */,
-				A0026B6B20980DD000B6926D /* FilterViewModel.swift */,
+				A0026B7A209B056000B6926D /* Views */,
+				A0026B79209B055300B6926D /* ViewModels */,
 			);
 			path = "Filter Screen";
 			sourceTree = "<group>";
 		};
-		A0026B6D20980E7000B6926D /* Navigator */ = {
+		A0026B6D20980E7000B6926D /* Navigators */ = {
 			isa = PBXGroup;
 			children = (
 				A0026B7020980EA300B6926D /* Navigator.swift */,
 				A0026B722098125900B6926D /* AdsNavigator.swift */,
 				A0026B6E20980E7E00B6926D /* AppNavigator.swift */,
 			);
-			path = Navigator;
+			path = Navigators;
+			sourceTree = "<group>";
+		};
+		A0026B78209B054600B6926D /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				A0026B5B20978B5600B6926D /* AdViewModel.swift */,
+				A0026B602097A84A00B6926D /* AdItemViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		A0026B79209B055300B6926D /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				A0026B6B20980DD000B6926D /* FilterViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		A0026B7A209B056000B6926D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A0026B6920980D1B00B6926D /* FilterViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A0026B7B209B056600B6926D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A060C9FA2096F77200DAD27F /* AdViewController.swift */,
+				A0026B3020975D5200B6926D /* AdCollectionViewCell.swift */,
+				A0026B3420976AF000B6926D /* AdDetailViewController.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		A060C9EC2096F77200DAD27F = {
@@ -308,7 +340,7 @@
 		A060C9F72096F77200DAD27F /* FLApp */ = {
 			isa = PBXGroup;
 			children = (
-				A0026B6D20980E7000B6926D /* Navigator */,
+				A0026B6D20980E7000B6926D /* Navigators */,
 				A0026B6820980CFD00B6926D /* Filter Screen */,
 				A0026B40209777AE00B6926D /* DNA */,
 				A0026B2420974D2400B6926D /* Extensions */,
