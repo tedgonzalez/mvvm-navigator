@@ -33,6 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let barButtonItemAppearance = UIBarButtonItem.appearance()
         barButtonItemAppearance.setTitleTextAttributes(buttonAttributes, for: .normal)
+        UIApplication.shared.statusBarStyle = .lightContent
     }
     
     func applicationWillResignActive(_ application: UIApplication) {
